@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #333;
+  color: white;
+  font-family: "Dancing Script", cursive;
+}
+.contains {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+}
+.card_container {
+  perspective: 50rem;
+  /* perspective-origin: top; */
+  transform-style: preserve-3d;
+  /* background-color: rgb(204, 49, 235); */
+}
+.card {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  border: 3px solid rgb(233, 119, 138);
+  border-radius: 0.125em;
+  font-size: 3rem;
+  width: 40vh;
+  aspect-ratio: 2/3;
+  transition: transform 300ms ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 1px 7px rgba(255, 192, 203, 0.76),
+    inset 0 1px 7px rgba(255, 192, 203, 0.753);
+}
+.card_container:hover .card {
+  transform: rotate3d(var(--x), var(--y), 3, 25deg);
+}
+.card p {
+  text-shadow: 0 1px 2px pink;
+  transform: translateZ(300px);
+  pointer-events: none;
+}
